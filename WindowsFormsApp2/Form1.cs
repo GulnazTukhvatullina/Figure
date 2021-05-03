@@ -52,5 +52,19 @@ namespace WindowsFormsApp2
             if (form4 != null)
                 form4.BackColor = Color.Azure;
         }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            var paper = panel1.CreateGraphics();
+            var pen = new Pen(Color.Red, 5);
+            paper.DrawEllipse(pen, e.X, e.Y, 50, 50);
+        }
+
+        private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var paper = panel1.CreateGraphics();
+            var pen = new Pen(Color.Blue, 5);
+            paper.DrawLine(new Pen(Color.Yellow, 6), new Point(e.X, e.Y), new Point(150, 70));
+        }
     }
 }
