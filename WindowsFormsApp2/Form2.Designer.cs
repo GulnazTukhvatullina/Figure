@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.X = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ок = new System.Windows.Forms.Button();
+            this.Y = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.R = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // X
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(39, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 32);
-            this.textBox1.TabIndex = 1;
+            this.X.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.X.Location = new System.Drawing.Point(39, 79);
+            this.X.Name = "X";
+            this.X.Size = new System.Drawing.Size(145, 32);
+            this.X.TabIndex = 1;
             // 
             // label2
             // 
@@ -62,14 +66,51 @@
             this.ок.Text = "OK\r\n";
             this.ок.UseVisualStyleBackColor = true;
             // 
+            // Y
+            // 
+            this.Y.Location = new System.Drawing.Point(39, 191);
+            this.Y.Name = "Y";
+            this.Y.Size = new System.Drawing.Size(145, 22);
+            this.Y.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Y";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // R
+            // 
+            this.R.Location = new System.Drawing.Point(39, 305);
+            this.R.Name = "R";
+            this.R.Size = new System.Drawing.Size(145, 22);
+            this.R.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 285);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 17);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "R";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.R);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Y);
             this.Controls.Add(this.ок);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.X);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -78,8 +119,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ок;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox R;
+        public System.Windows.Forms.TextBox X;
+        public System.Windows.Forms.TextBox Y;
     }
 }

@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.Square = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -46,9 +47,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel1.Location = new System.Drawing.Point(109, 115);
+            this.panel1.Location = new System.Drawing.Point(62, 115);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 267);
+            this.panel1.Size = new System.Drawing.Size(682, 323);
             this.panel1.TabIndex = 1;
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
@@ -63,12 +64,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Line_Click);
             // 
+            // Square
+            // 
+            this.Square.Location = new System.Drawing.Point(363, 22);
+            this.Square.Name = "Square";
+            this.Square.Size = new System.Drawing.Size(124, 66);
+            this.Square.TabIndex = 3;
+            this.Square.Text = "Square\r\n";
+            this.Square.UseVisualStyleBackColor = true;
+            this.Square.Click += new System.EventHandler(this.Square_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Square);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Square;
     }
 }
 

@@ -27,7 +27,12 @@ namespace WindowsFormsApp2
             {
                 var paper = panel1.CreateGraphics();
                 var pen = new Pen(Color.Blue, 5);
-                paper.DrawEllipse(pen, 40, 40, 50, 50);
+                if (form2.X !=null && form2.Y != null && form2.R != null)
+                {
+                    paper.DrawEllipse(pen, Convert.ToInt32(form2.X.Text), Convert.ToInt32(form2.Y.Text), Convert.ToInt32(form2.R.Text),
+                         Convert.ToInt32(form2.R.Text));
+                }
+                
             }
         }
         private void button1_MouseHover(object sender, EventArgs e)
@@ -65,6 +70,11 @@ namespace WindowsFormsApp2
             var paper = panel1.CreateGraphics();
             var pen = new Pen(Color.Blue, 5);
             paper.DrawLine(new Pen(Color.Yellow, 6), new Point(e.X, e.Y), new Point(150, 70));
+        }
+
+        private void Square_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
