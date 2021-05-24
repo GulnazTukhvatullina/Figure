@@ -14,9 +14,15 @@ namespace WindowsFormsApp2
     {
         private Form2 form2;
         private Form4 form4;
+
+        private Bitmap draw;
+        private Graphics paper;
+
         public Form1()
         {
             InitializeComponent();
+            draw = new Bitmap(panel1.Width, panel1.Height);
+            paper = Graphics.FromImage(draw);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,14 +54,31 @@ namespace WindowsFormsApp2
             if (form4.ShowDialog(this) == DialogResult.OK)
             {
                 var paper = panel1.CreateGraphics();
-                var pen = new Pen(Color.Blue, 5);
-                paper.DrawLine(new Pen(Color.Green, 6), new Point(60, 30), new Point(150, 70));
+                if (form4.X1 != null && form4.Y1 != null && form4.LX2 != null && form4.LY2 != null)
+                {
+                    paper.DrawLine(new Pen(Color.Green, 2), Convert.ToInt32(form4.X1.Text), Convert.ToInt32(form4.Y1.Text),
+                        Convert.ToInt32(form4.LX2.Text), Convert.ToInt32(form4.LY2.Text));
+                }
             }
         }
         private void Line_MouseHover(object sender, EventArgs e)
         {
             if (form4 != null)
                 form4.BackColor = Color.Azure;
+        }
+
+        private void Square_Click(object sender, EventArgs e)
+        {
+            form4 = new Form4();
+            if (form4.ShowDialog(this) == DialogResult.OK)
+            {
+                var paper = panel1.CreateGraphics();
+                if (form4.X1 != null && form4.Y1 != null && form4.LX2 != null && form4.LY2 != null)
+                {
+                    paper.DrawLine(new Pen(Color.Green, 2), Convert.ToInt32(form4.X1.Text), Convert.ToInt32(form4.Y1.Text),
+                        Convert.ToInt32(form4.LX2.Text), Convert.ToInt32(form4.LY2.Text));
+                }
+            }
         }
 
         private void panel1_MouseClick(object sender, MouseEventArgs e)
@@ -72,9 +95,21 @@ namespace WindowsFormsApp2
             paper.DrawLine(new Pen(Color.Yellow, 6), new Point(e.X, e.Y), new Point(150, 70));
         }
 
-        private void Square_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != " ")
+                draw.Save(saveFileDialog1.FileName);
+        }
 
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != " ")
+            {
+                draw = (Bitmap)Image.FromFile(openFileDialog1.FileName);
+                panel1.BackgroundImage = draw;
+            }
         }
     }
 }

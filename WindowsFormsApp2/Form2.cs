@@ -31,5 +31,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void X_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
